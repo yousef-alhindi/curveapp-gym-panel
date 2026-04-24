@@ -1,0 +1,123 @@
+<div class="list-group" #target>
+  <div class="item-list" >
+
+    <a (click)="bindChildToParent(item.name, item)" *ngFor="let item of sidebarModules" routerLink="{{item.route}}" routerLinkActive="active"
+      class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+      <div class="side-img">
+        <img [src]=item.icon alt="icon">
+      </div>
+
+
+      {{item.name}}
+    </a>
+
+<!-- 
+    <a routerLink="/gym/dashboard" routerLinkActive="active"
+      class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+
+      <div class="side-img">
+        <img src="assets/images/dashboard.png" alt="">
+      </div>
+
+      Dashboard
+    </a>
+
+    <a routerLink="/gym/menu-mgmt" routerLinkActive="active"
+      class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+
+      <div class="side-img">
+        <img src="assets/images/package_management.png" alt="">
+      </div>
+      Menu Management
+    </a>
+
+    <a routerLink="/gym/wallet-mgmt" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/payment_management.png" alt="">
+    </div>
+      My Wallet
+    </a>
+
+
+    <a routerLink="/gym/offer-mgmt" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/offer_management.png" alt="">
+    </div>
+        Offer Management 
+    </a>
+
+    <a routerLink="/gym/join-as-sponsor" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/subscription.png" alt="">
+    </div>
+      Join As Sponsor 
+      </a>
+
+      <a routerLink="/gym/support" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/support.png" alt="">
+    </div>
+        Support
+    </a>
+
+    <a  routerLink="/gym/terms-condition" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/terms_and_conditions.png" alt="">
+    </div>
+    Terms & Conditions
+      </a>
+
+    <a routerLink="/gym/privacy-policy" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/privacy_policy.png" alt="">
+    </div>
+    Privacy Policy    </a>
+
+
+    <a (click)="scrollToElement(target)" routerLink="/gym/about-us" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/about_us.png" alt="">
+    </div>
+    About Us    </a>
+
+
+    <a (click)="scrollToElement(target)" routerLink="/gym/faq" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/faqs.png" alt="">
+    </div>
+    FAQs
+    </a>
+
+    <a  (click)="scrollToElement(target)"  routerLink="/gym/contact-us" routerLinkActive="active"
+    class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+    <div class="side-img">
+      <img src="assets/images/contact_us.png" alt="">
+    </div>
+    Contact Us
+      </a> -->
+
+
+
+
+    <div class="logout" (click)="logoutDialog('500ms','500ms')">
+      <a class="list-group-item d-flex align-items-center gap-2 list-group-item-action">
+        <div class="d-flex">
+          <mat-icon>exit_to_app</mat-icon>
+        </div>
+        Logout
+      </a>
+
+    </div>
+
+
+
+  </div>
+  

@@ -1,0 +1,209 @@
+<div class="row">
+  <div class="col-xl-10">
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h4 class="card-title">
+            <i class="bi bi-arrow-left-short" routerLink="/gym/gym-package-mgmt"></i>
+            <span> Add Package Details </span>
+          </h4>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-form">
+          <form [formGroup]="pckgForm">
+            <div class="row">
+              <div class="col-md-3  mx-auto">
+                <!-- <label class="label-form">Upload Image</label> -->
+                <div class="upload-container    image-upload ">
+                  <input type="file" class="upload-input" (change)="onSelectFile($event)" accept="image/*" />
+                  <div class="image-preview">
+                    <img [src]="profileImage ? profileImage : 'assets/images/upload_document.png'" width="auto" alt="Uploaded Image"
+                      class="image-preview-img" />
+                    </div>
+                  </div>
+                  <mat-error
+                  class="text-danger"
+                  *ngIf="submitted && f['image'].errors"
+                >
+                  <span *ngIf="f['image'].errors['required']"
+                    >*Image is required
+                  </span>
+                </mat-error>
+              </div>
+
+              <div class="col-12 mb-2">
+                <div class="custom-form-input mb-2">
+                  <label class="label-form">Package Name</label>
+                  <mat-form-field appearance="outline" class="w-100">
+                    <input matInput placeholder="Type Here" formControlName="name" />
+                  </mat-form-field>
+                  <mat-error
+                  class="text-danger"
+                  *ngIf="submitted && f['name'].errors"
+                >
+                  <span *ngIf="f['name'].errors['required']"
+                    >*Package Name is required
+                  </span>
+                </mat-error>
+                </div>
+              </div>
+
+
+
+              <!-- <div class="row align-items-center pe-0">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 mb-2">
+                          <div class="custom-form-input mb-2">
+                            <label class="label-form">Duration</label>
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-select placeholder="Select type">
+                                <mat-option value="1">1 Month</mat-option>
+                                <mat-option value="2">2 Month</mat-option>
+                                <mat-option value="2">2 Month</mat-option>
+                                <mat-option value="2">2 Month</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </div>
+                        </div>
+            
+                        <div class="col-lg-5 mb-2">
+                          <div class="custom-form-input mb-2">
+                            <label class="label-form">Price</label>
+                            <mat-form-field appearance="outline" class="w-100">
+                              <input matInput placeholder="Type Here" />
+                            </mat-form-field>
+                          </div>
+                        </div>
+          
+                        <div class="col-lg-2 mb-2 text-end pe-0">
+                          <div class="custom-form-input mb-2">
+                            <label class="label-form invisible">Duration</label>
+                            <div>
+                                <i class="bi bi-plus-circle-fill"></i>
+                           
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+              </div> -->
+
+              <div class="col-12" formArrayName="durations">
+                <div class="row" *ngFor="let field of durations.controls; let i = index" [formGroupName]="i">
+                  <div class="col-md-6 mb-4">
+                    <div class="custom-select w-100">
+                      <select class="form-select" formControlName="duration">
+                        <option value="" disabled>Duration</option>
+                        <option [value]="1">1 Month</option>
+                        <option [value]="3">3 Months</option>
+                        <option [value]="6">6 Months</option>
+                        <option [value]="12">Yearly</option>
+                      </select>
+                    </div>
+                  </div>
+              
+                  <div class="col-md-6 mb-4 d-flex gap-3 align-items-center">
+                    <div class="custom-form-control w-100">
+                      <input type="number" class="form-control" placeholder="Enter Price" formControlName="price">
+                      <!-- <mat-error
+                      class="text-danger"
+                      *ngIf="submitted && f['price'].errors"
+                    >
+                      <span *ngIf="f['price'].errors['required']"
+                        >*Price is required
+                      </span>
+                    </mat-error> -->
+                    </div>
+              
+                    <div *ngIf="i === durations.length - 1 && durations.length < 4" class="add-icon" (click)="addFields()">
+                      <!-- Show + icon until 4 fields are added -->
+                      <i class="bi bi-plus-circle"></i>
+                    </div>
+              
+                    <div *ngIf="durations.length > 1" class="add-icon" (click)="removeField(i)">
+                      <!-- Show - icon when more than 1 field is present -->
+                      <i class="bi bi-dash-circle"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row align-items-center pe-0">
+                <div class="col-12">
+                  <div class="row align-items-center">
+                    <div class="col-lg-5 mb-2">
+                      <div class="custom-form-input mb-2">
+                        <label class="label-form">Gender</label>
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-select placeholder="Select type" formControlName="gender">
+                            <mat-option value="men">Men</mat-option>
+                            <mat-option value="women">Women</mat-option>
+                            <mat-option value="unisex">Unisex</mat-option>
+
+                          </mat-select>
+                        </mat-form-field>
+                        <mat-error
+                        class="text-danger"
+                        *ngIf="submitted && f['gender'].errors"
+                      >
+                        <span *ngIf="f['gender'].errors['required']"
+                          >*Gender is required
+                        </span>
+                      </mat-error>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-lg-12 mb-2">
+                <div class="custom-form-input custom-textarea mb-2">
+                  <label class="label-form">Description</label>
+                  <mat-form-field appearance="outline" class="w-100">
+                    <textarea matInput rows="6" formControlName="description"></textarea>
+                  </mat-form-field>
+                  <mat-error
+                  class="text-danger"
+                  *ngIf="submitted && f['description'].errors"
+                >
+                  <span *ngIf="f['description'].errors['required']"
+                    >*Description is required
+                  </span>
+                </mat-error>
+                </div>
+              </div>
+              <div class="col-lg-12 mb-2">
+                <div class="custom-form-input custom-textarea mb-2">
+                  <label class="label-form">Terms & Condtions</label>
+                  <mat-form-field appearance="outline" class="w-100">
+                    <textarea matInput rows="6" formControlName="termAndCond"></textarea>
+                  </mat-form-field>
+                  <mat-error
+                  class="text-danger"
+                  *ngIf="submitted && f['termAndCond'].errors"
+                >
+                  <span *ngIf="f['termAndCond'].errors['required']"
+                    >*Term And Conditions are required
+                  </span>
+                </mat-error>
+                </div>
+              </div>
+
+
+
+              <div class="col-lg-6">
+                <button class="w-100" color="primary" mat-flat-button (click)="submit()">
+                  Save
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

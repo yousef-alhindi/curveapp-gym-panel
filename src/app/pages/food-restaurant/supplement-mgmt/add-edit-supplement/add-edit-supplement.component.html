@@ -1,0 +1,289 @@
+<div class="row">
+  <div class="col-xl-8">
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h4 class="card-title">
+            <i class="bi bi-arrow-left-short" routerLink="/gym/supplement-mgmt"></i>
+            <span> Add Supplement </span>
+          </h4>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-form">
+          <div class="row">
+            <div class="col-12 mb-2">
+              <div class="custom-form-input mb-2">
+                <label class="label-form">Select Type</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-select placeholder="Select type">
+                    <mat-option value="1">Weight Gain</mat-option>
+                    <mat-option value="2">Weight Loss</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-2">
+              <div class="custom-form-input mb-2">
+                <label class="label-form">Size</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <input matInput placeholder="Type Here" />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-2">
+              <div class="custom-form-input mb-2">
+                <label class="label-form">Quantity</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <input matInput placeholder="Type Here" />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-2">
+              <div class="custom-form-input mb-2">
+                <label class="label-form">MRP</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <input matInput placeholder="Type Here" />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-2">
+              <div class="custom-form-input mb-2">
+                <label class="label-form">Selling</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <input matInput placeholder="Type Here" />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-lg-12 mb-2">
+              <div class="custom-form-input mb-2">
+                <label class="label-form">Supplement Name</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <input matInput placeholder="Type Here" />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-lg-12 mb-2">
+              <div class="custom-form-input mb-2">
+                <label class="label-form">Brand Name</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <input matInput placeholder="Type Here" />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-lg-12 mb-2">
+              <div class="custom-form-input custom-textarea mb-2">
+                <label class="label-form">Description</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <textarea matInput rows="6"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-lg-12 mb-2">
+              <div class="custom-form-input custom-textarea mb-2">
+                <label class="label-form">Upload Supplement Images</label>
+              </div>
+              <div class="row row-cols-1 row-cols-xl-5">
+                <div class="col">
+                  <div class="upload-container">
+                    <input
+                      class="upload-input"
+                      type="file"
+                      (change)="onFileSelected($event)"
+                      accept="image/*"
+                      [hidden]="imageUrl !== ''"
+                    />
+
+                    <div *ngIf="!imageUrl" class="upload-btn">
+                      <img
+                        src="assets/images/upload_document.png"
+                        alt="upload"
+                      />
+                      <p class="text-primary">Upload</p>
+                    </div>
+
+                    <button
+                      *ngIf="imageUrl"
+                      class="del-btn"
+                      (click)="removeImage()"
+                    >
+                      <i class="bi bi-x-lg"></i>
+                    </button>
+
+                    <div *ngIf="imageUrl" class="image-preview">
+                      <img
+                        [src]="imageUrl"
+                        alt="Image Preview"
+                        class="image-preview-img"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                    <div class="upload-container">
+                      <input
+                        class="upload-input"
+                        type="file"
+                        (change)="onFileSelected1($event)"
+                        accept="image/*"
+                        [hidden]="imageUrl1 !== ''"
+                      />
+  
+                      <div *ngIf="!imageUrl1" class="upload-btn">
+                        <img
+                          src="assets/images/upload_document.png"
+                          alt="upload"
+                        />
+                        <p class="text-primary">Upload</p>
+                      </div>
+  
+                      <button
+                        *ngIf="imageUrl1"
+                        class="del-btn"
+                        (click)="removeImage1()"
+                      >
+                        <i class="bi bi-x-lg"></i>
+                      </button>
+  
+                      <div *ngIf="imageUrl1" class="image-preview">
+                        <img
+                          [src]="imageUrl1"
+                          alt="Image Preview"
+                          class="image-preview-img"
+                        />
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="upload-container">
+                      <input
+                        class="upload-input"
+                        type="file"
+                        (change)="onFileSelected2($event)"
+                        accept="image/*"
+                        [hidden]="imageUrl2 !== ''"
+                      />
+  
+                      <div *ngIf="!imageUrl2" class="upload-btn">
+                        <img
+                          src="assets/images/upload_document.png"
+                          alt="upload"
+                        />
+                        <p class="text-primary">Upload</p>
+                      </div>
+  
+                      <button
+                        *ngIf="imageUrl2"
+                        class="del-btn"
+                        (click)="removeImage2()"
+                      >
+                        <i class="bi bi-x-lg"></i>
+                      </button>
+  
+                      <div *ngIf="imageUrl2" class="image-preview">
+                        <img
+                          [src]="imageUrl2"
+                          alt="Image Preview"
+                          class="image-preview-img"
+                        />
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="upload-container">
+                      <input
+                        class="upload-input"
+                        type="file"
+                        (change)="onFileSelected3($event)"
+                        accept="image/*"
+                        [hidden]="imageUrl3 !== ''"
+                      />
+  
+                      <div *ngIf="!imageUrl3" class="upload-btn">
+                        <img
+                          src="assets/images/upload_document.png"
+                          alt="upload"
+                        />
+                        <p class="text-primary">Upload</p>
+                      </div>
+  
+                      <button
+                        *ngIf="imageUrl3"
+                        class="del-btn"
+                        (click)="removeImage3()"
+                      >
+                        <i class="bi bi-x-lg"></i>
+                      </button>
+  
+                      <div *ngIf="imageUrl3" class="image-preview">
+                        <img
+                          [src]="imageUrl3"
+                          alt="Image Preview"
+                          class="image-preview-img"
+                        />
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="upload-container">
+                      <input
+                        class="upload-input"
+                        type="file"
+                        (change)="onFileSelected4($event)"
+                        accept="image/*"
+                        [hidden]="imageUrl4 !== ''"
+                      />
+  
+                      <div *ngIf="!imageUrl4" class="upload-btn">
+                        <img
+                          src="assets/images/upload_document.png"
+                          alt="upload"
+                        />
+                        <p class="text-primary">Upload</p>
+                      </div>
+  
+                      <button
+                        *ngIf="imageUrl4"
+                        class="del-btn"
+                        (click)="removeImage4()"
+                      >
+                        <i class="bi bi-x-lg"></i>
+                      </button>
+  
+                      <div *ngIf="imageUrl4" class="image-preview">
+                        <img
+                          [src]="imageUrl4"
+                          alt="Image Preview"
+                          class="image-preview-img"
+                        />
+                      </div>
+                    </div>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <button class="w-100" color="primary" mat-flat-button>
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

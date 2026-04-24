@@ -1,0 +1,161 @@
+<div class="dialog-wrapper">
+  <div mat-dialog-title>
+    <span class="dialog-heading">Package Details</span>
+    <i mat-dialog-close class="bi bi-x-circle-fill primary-color"></i>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <div class="row">
+      <div class="col-12">
+        <!-- <div class="table-card">
+          <div class="table-responsive">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    <label>Schedule Date & Time</label>
+                  </td>
+
+                  <td>
+                    <label class="invisible">X </label>
+                  </td>
+
+                  <td>
+                    <label class="date">{{data?.scheduledDate | date:'dd/MM/yyyy | hh:mm a'}}</label>
+                  </td>
+                </tr>
+
+                <tr *ngFor="let item of items">
+                  <td >
+                    <p class="text">{{item?.itemId?.name}}</p>
+                  </td>
+
+                  <td>
+                    <label>X <span class="text-dark">{{item?.quantity}}</span> </label>
+                  </td>
+
+                  <td>
+                    <p class="text">KWD {{item?.amount}}</p>
+                  </td>
+                </tr>
+                <label>Customize Items</label>
+              
+                <tr *ngFor="let item of customizeArray">
+                  <td>
+                    <p class="text mb-0">{{item?.name}}</p>
+                  </td>
+
+                  <td>
+                    <label>X <span class="text-dark">static</span> </label>
+                  </td>
+
+                  <td>
+                    <p class="text mb-0">KWD {{item?.price}}</p>
+                  </td>
+                </tr>
+        
+              </tbody>
+            </table>
+          </div>
+        </div> -->
+
+        <div class="table-card sub-table mt-3">
+          <div class="table-responsive">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    <label class="text-dark">Package Name</label>
+                    <p>{{gymDetails?.gymCartId?.packageId?.name | titlecase}}</p>
+                  </td>
+
+                  <td>
+                    <label class="text-dark">Package Duration</label>
+                    <p>{{gymDetails?.gymCartId?.duration}} month</p>
+                  </td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+     
+          <div class="table-card sub-table  mt-3">
+            <div class="table-responsive border-0">
+              <table class="table table-borderless ">
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="text-dark">Package Price</label>
+                    </td>
+
+                    <td>
+                      <p class="text text-success">KWD {{gymDetails?.amountPaid}}</p>
+                    </td>
+                    
+                  </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <div class="table-card sub-table  mt-3">
+            <div class="table-responsive">
+              <table class="table table-borderless ">
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="text-dark">Package Description</label>
+                      <p>{{gymDetails?.gymCartId?.packageId?.description}}</p>
+                     
+                    </td>
+                    
+                  </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="table-card sub-table  mt-3">
+            <div class="table-responsive border-0">
+              <table class="table table-borderless ">
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="text-dark">Term And Condition</label>
+                      <p>{{gymDetails?.gymCartId?.packageId?.termAndCond}}</p>
+                    
+                    </td>
+                    
+                  </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+    
+      </div>
+    </div>
+  </mat-dialog-content>
+  <!-- <mat-dialog-actions>
+    <div class="condition-wrapper">
+      <div class="check-margin mb-3">
+        <div class="checkbox dialog-check">
+          <mat-checkbox class="example-margin" [(ngModel)]="viewInstruction">Instruction</mat-checkbox>
+        </div>
+      </div>
+
+      <div class="condition-text">
+        <p *ngIf="viewInstruction">
+          {{items?.instructions ? items?.instructions : 'No instructions'}}
+        </p>
+      </div>
+    </div>
+  </mat-dialog-actions> -->
+</div>

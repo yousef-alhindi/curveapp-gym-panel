@@ -1,0 +1,79 @@
+<!-- <div class="dialog-wrapper">
+    <div mat-dialog-title>
+        <span class="dialog-heading">Package Duration</span>
+        <i mat-dialog-close class="bi bi-x-circle-fill primary-color"></i>
+    </div>
+    <div class="detail-card">
+        <div class="card mt-3 p-3">
+           
+    
+    
+            <table class="table mb-3 w-100 my-4">
+                <tr>
+                    <td class="left">1 Month</td>
+                    <td><strong>KWD 70</strong></td>
+    
+                </tr>
+                <tr>
+                    <td class="left">3 Months</td>
+                    <td><strong>KWD 70</strong></td>
+    
+                </tr>
+                <tr>
+                    <td class="left">6 Months</td>
+                    <td><strong>KWD 70</strong></td>
+    
+                </tr>
+                <tr>
+                    <td class="left">Yearly</td>
+                    <td><strong>KWD 70</strong></td>
+    
+                </tr>
+    
+            </table>
+            
+        </div>
+    </div>
+</div>
+
+
+
+ -->
+
+
+ <div class="dialog-wrapper">
+    <div mat-dialog-title>
+        <span class="dialog-heading">Package Duration</span>
+        <i mat-dialog-close class="bi bi-x-circle-fill primary-color"></i>
+    </div>
+    <mat-dialog-content class="mat-typography">
+
+        <div class="row">
+            <div class="col-12">
+             
+                <div class="table-responsive ">
+                    <table class="table  table-borderless mb-0" >
+  
+                      <tbody>
+                        <tr *ngFor="let i of data">
+                          <td>
+                            <label>{{i?.duration}} month</label>
+                          </td>
+  
+                          <td>
+                            <label class="strong" >KD {{i?.price}}</label>
+                          </td>
+                        </tr>
+                      
+  
+                      </tbody>
+                    </table>
+                  </div>
+
+
+
+            </div>
+        </div>
+    </mat-dialog-content>
+  
+</div>

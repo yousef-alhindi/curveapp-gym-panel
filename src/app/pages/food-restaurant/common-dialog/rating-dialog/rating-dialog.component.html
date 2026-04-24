@@ -1,0 +1,34 @@
+<div class="dialog-wrapper">
+    <div mat-dialog-title>
+        <span class="dialog-heading">Rating</span>
+        <i mat-dialog-close class="bi bi-x-circle-fill primary-color"></i>
+    </div>
+    <mat-dialog-content class="mat-typography">
+
+        <div class="row">
+            <div class="col-12">
+             
+              
+
+           
+                  <div class="star-wrap">
+                    <ngx-star-rating  [(ngModel)]="ratingsData" [id]="'rating'" [disabled] ="true"></ngx-star-rating>        
+                </div>
+     
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div class="condition-wrapper">
+            <h6 class="card-subtitle tc" >Review</h6>
+            <div class="condition-text">
+              <p >
+                {{review}}
+            </p>
+
+         
+            </div>
+          </div>
+        
+    </mat-dialog-actions>
+</div>
